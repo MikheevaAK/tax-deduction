@@ -1,0 +1,121 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    font-family: "MabryPro", sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0 auto;
+    background-color: $white;
+    font-weight: $font-regular;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+
+    background-color: $akcent;
+
+    @media (max-width: $screen-md) {
+        font-size: 1rem;    
+        line-height: 1.375rem;
+    }
+}
+
+img {
+    width: 100%;
+    border-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* glob */
+
+.container {
+    margin: 0 auto;
+    max-width: 90rem;
+    width: 100%
+}
+
+.flex {
+    display: flex;
+}
+
+.h1 {
+    font-size: 4rem;
+    font-weight: $font-medium;
+
+    @media (max-width: $screen-md) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;  
+    }
+}
+
+.h2 {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    letter-spacing: -0.025em;
+
+    @media (max-width: $screen-md) {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+    }
+}
+
+.h3 {
+    font-size: 1.75rem;
+    font-weight: $font-medium;
+    line-height: 2.25rem;
+    letter-spacing: -0.0175em;
+
+    @media (max-width: $screen-md) {
+        font-size: 1.25rem;
+        line-height: 1.875rem; 
+    }
+}
+
+.lead {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+
+    @media (max-width: $screen-md) {
+        font-size: 1.25rem;
+        line-height: 1.875rem; 
+    }
+}
+
+.graph-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    @media (max-width: $screen-md) {
+        font-size: 1.25rem;
+        line-height: 1.875rem; 
+    }
+}
+
+.caption {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}

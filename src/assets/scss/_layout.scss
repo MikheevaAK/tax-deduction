@@ -1,0 +1,40 @@
+.header {
+    color: $text;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(2px);
+
+    .container {
+        padding: 1rem 1.375rem 0.5rem 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link {
+        margin-right: auto;
+    }
+
+    &__link_none {
+        @media (max-width: $screen-md) {
+            display: none;
+        }
+    }
+}
+
+.footer {
+    color: $white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    .container {
+        padding: 0 1.5rem;
+        margin: 5rem 0 2.5rem 0;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $screen-md) {
+            margin-top: 2.5rem;
+        }
+    }
+}
