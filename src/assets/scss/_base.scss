@@ -4,6 +4,15 @@ html {
     -webkit-overflow-scrolling: touch;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 *,
 *::before,
 *::after {
@@ -22,18 +31,25 @@ body {
     margin: 0 auto;
     background-color: $white;
     font-weight: $font-regular;
-    font-size: 1.25rem;
-    line-height: 1.875rem;
+    font-size: 1.39vw;
+    line-height: 2.08vw;
 
     @media (max-width: $screen-md) {
-        font-size: 1rem;    
-        line-height: 1.375rem;
+        font-size: 4.27vw;
+        line-height: 5.87vw;
     }
 }
 
-img {
+img,
+svg {
     width: 100%;
+    height: 100%;
     border-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
 }
 
 a {
@@ -59,8 +75,18 @@ p {
 
 .container {
     margin: 0 auto;
-    max-width: 90rem;
+    // max-width: 90rem;
     width: 100%
+}
+
+.main__wrap {
+    margin: 0 auto;
+    max-width: 40.28vw;
+
+    @media (max-width: $screen-md) {
+        margin: 0 4.27vw;
+        max-width: unset;
+    }
 }
 
 .flex {
@@ -68,122 +94,169 @@ p {
 }
 
 .h1 {
-    font-size: 4rem;
-    // font-size: 3.333vw;
+    font-size: 4.44vw;
     font-weight: $font-medium;
     line-height: 100%;
     color: $white;
 
     @media (max-width: $screen-md) {
-        font-size: 2.25rem;
-        line-height: 2.5rem;  
+        font-size: 9.60vw;
+        line-height: 10.67vw;
     }
 }
 
 .h2 {
-    font-size: 2.5rem;
-    line-height: 2.75rem;
-    letter-spacing: -0.025em;
+    font-size: 2.78vw;
+    line-height: 3.06vw;
+    letter-spacing: -0.03vw;
 
     @media (max-width: $screen-md) {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
+        font-size: 7.47vw;
+        line-height: 9.60vw;
+        letter-spacing: -0.11vw;
     }
 }
 
 .h3 {
-    font-size: 1.75rem;
+    font-size: 1.94vw;
     font-weight: $font-medium;
-    line-height: 2.25rem;
-    letter-spacing: -0.0175em;
+    line-height: 2.5vw;
+    letter-spacing: -0.02vw;
+    margin-bottom: 1.11vw;
+
+    @media (max-width: $screen-md) {
+        font-size: 5.33vw;
+        line-height: 8vw;
+        letter-spacing: -0.07vw;
+        margin-bottom: 4.27vw;
+    }
+}
+
+.h4 {
+    font-size: 1.39vw;
+    font-weight: $font-bold;
+    line-height: 2.08vw;
     color: #1F6B99;
 
     @media (max-width: $screen-md) {
-        font-size: 1.25rem;
-        line-height: 1.875rem; 
+        font-size: 5.33vw;
+        line-height: 8vw;
     }
 }
 
 .lead {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
+    font-size: 1.94vw;
+    line-height: 2.5vw;
 
     @media (max-width: $screen-md) {
-        font-size: 1.25rem;
-        line-height: 1.875rem; 
+        font-size: 5.33vw;
+        line-height: 8vw;
     }
 }
 
 .graph-text {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 0.97vw;
+    line-height: 1.39vw;
 
     @media (max-width: $screen-md) {
-        font-size: 1.25rem;
-        line-height: 1.875rem; 
+        font-size: 3.73vw;
+        line-height: 5.33vw;
     }
 }
 
 .graph-caption {
-    font-size: 0.875rem;
+    font-size: 1.11vw;
     font-weight: $font-medium;
-    line-height: 1.25rem;
-    letter-spacing: 0.0875rem;
+    line-height: 1.67vw;
+    letter-spacing: 0.06vw;
     text-transform: uppercase;
     color: $akcent;
+
+    @media (max-width: $screen-md) {
+        font-size: 4.27vw;
+        line-height: 6.40vw;
+        letter-spacing: 0.21vw;
+    }
 }
 
 .caption {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+    font-size: 1.39vw;
+    line-height: 1.67vw;
+
+    @media (max-width: $screen-md) {
+        font-size: 5.33vw;
+        line-height: 6.40vw;
+    }
 }
 
-.mb-1 {
-    margin-bottom: 1rem;
+// new
+
+.mb-80 {
+    margin-bottom: 5.56vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 10.67vw;
+    }
 }
 
-.mb-025 {
-    margin-bottom: 0.25rem;
+.mt-80 {
+    margin-top: 5.56vw;
+
+    @media (max-width: $screen-md) {
+        margin-top: 10.67vw;
+    }
 }
 
-.mb-05 {
-    margin-bottom: 0.5rem;
+.mb-50 {
+    margin-bottom: 3.47vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 13.33vw;
+    }
 }
 
-.mb-1-5 {
-    margin-bottom: 1.5rem;
+.mb-40 {
+    margin-bottom: 2.78vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 10.67vw;
+    }
 }
 
-.mb-2-5 {
-    margin-bottom: 2.5rem;
+.mb-30 {
+    margin-bottom: 2.08vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 8vw;
+    }
 }
 
-.mb-2 {
-    margin-bottom: 2rem;
+.mb-25 {
+    margin-bottom: 1.74vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 6.67vw;
+    }
 }
 
-.mb-3 {
-    margin-bottom: 3rem;
+.mb-20 {
+    margin-bottom: 1.39vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 5.33vw;
+    }
 }
 
-.mb-5 {
-    margin-bottom: 5rem;
+.mb-16 {
+    margin-bottom: 1.11vw;
+
+    @media (max-width: $screen-md) {
+        margin-bottom: 4.27vw;
+    }
 }
 
-.mb-7-5 {
-    margin-bottom: 7.5rem;
-}
-
-.mt-1-69 {
-    margin-top: 1.69rem;
-}
-
-.mt-2 {
-    margin-top: 2rem;
-}
-
-.ml-1 {
-    margin-left: 1rem;
+.flex-wrap {
+    flex-wrap: wrap;
 }
 
 .text-black {
@@ -192,6 +265,10 @@ p {
 
 .text-white {
     color: $white;
+}
+
+.text-headers {
+    color: $headers;
 }
 
 .selection-blue {
@@ -207,24 +284,22 @@ p {
     z-index: -1;
     left: -0.81rem;
     right: -0.81rem;
-    // width: 100%;
-	height: 1.5625rem;
-	transform: skew(-20deg);
-	background: $akcent;
+    height: 1.74vw;
+    transform: skew(-20deg);
+    background: $akcent;
+
+    @media (max-width: $screen-md) {
+        height: 5.87vw;
+    }
 }
 
-.card {
-    display: flex;
-    border: 1px solid #FFF;
-    background-color: #5BADDE;
-    transition: background .2s linear;
-}
+.nav {
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.card:hover {
-    background-color: #1F6B99;
-}
-
-.nav__wrap {
-    display: flex;
-    flex-wrap: wrap;
+    @media (max-width: $screen-md) {
+        flex-wrap: wrap;
+    }
 }

@@ -1,7 +1,8 @@
 <template>
     <section id="main" class="main" :class="{
-        'text-color': textColor,
-        'bg': bg}">
+        'text-white': textColor,
+        'bg': bg
+    }">
         <div class="container">
             <slot></slot>
         </div>
@@ -23,12 +24,33 @@ export default {
 }
 </script>
 
-<style>
-.text-color {
-    color: #fff;
+<style scoped>
+.main {
+    padding-top: 6.25vw;
+    padding-bottom: 8.33vw;
+}
+
+.main .container {
+    padding: 0 19.097vw;
+}
+
+.step-4 .main .container {
+    padding: 0 16.53vw;
 }
 
 .bg {
     background-color: #5BADDE;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding-top: 6.67vw;
+        padding-bottom: 21.33vw;
+    }
+
+    .main .container,
+    .step-4 .main .container {
+        padding: 0;
+    }
 }
 </style>
