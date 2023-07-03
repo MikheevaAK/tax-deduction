@@ -9,7 +9,7 @@ html {
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -24,8 +24,6 @@ body {
     font-weight: $font-regular;
     font-size: 1.25rem;
     line-height: 1.875rem;
-
-    background-color: $akcent;
 
     @media (max-width: $screen-md) {
         font-size: 1rem;    
@@ -52,6 +50,13 @@ p {
 
 /* glob */
 
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
 .container {
     margin: 0 auto;
     max-width: 90rem;
@@ -64,7 +69,10 @@ p {
 
 .h1 {
     font-size: 4rem;
+    // font-size: 3.333vw;
     font-weight: $font-medium;
+    line-height: 100%;
+    color: $white;
 
     @media (max-width: $screen-md) {
         font-size: 2.25rem;
@@ -88,6 +96,7 @@ p {
     font-weight: $font-medium;
     line-height: 2.25rem;
     letter-spacing: -0.0175em;
+    color: #1F6B99;
 
     @media (max-width: $screen-md) {
         font-size: 1.25rem;
@@ -115,7 +124,107 @@ p {
     }
 }
 
+.graph-caption {
+    font-size: 0.875rem;
+    font-weight: $font-medium;
+    line-height: 1.25rem;
+    letter-spacing: 0.0875rem;
+    text-transform: uppercase;
+    color: $akcent;
+}
+
 .caption {
     font-size: 1.25rem;
     line-height: 1.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-025 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-05 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-1-5 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-2-5 {
+    margin-bottom: 2.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-7-5 {
+    margin-bottom: 7.5rem;
+}
+
+.mt-1-69 {
+    margin-top: 1.69rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.text-black {
+    color: $text;
+}
+
+.text-white {
+    color: $white;
+}
+
+.selection-blue {
+    position: relative;
+    display: inline-block;
+    color: $white;
+    z-index: 2;
+}
+
+.selection-blue::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: -0.81rem;
+    right: -0.81rem;
+    // width: 100%;
+	height: 1.5625rem;
+	transform: skew(-20deg);
+	background: $akcent;
+}
+
+.card {
+    display: flex;
+    border: 1px solid #FFF;
+    background-color: #5BADDE;
+    transition: background .2s linear;
+}
+
+.card:hover {
+    background-color: #1F6B99;
+}
+
+.nav__wrap {
+    display: flex;
+    flex-wrap: wrap;
 }
