@@ -106,8 +106,8 @@ import TextSelection from '@/components/TextSelection';
 import TextWithBg from '@/components/TextWithBg';
 import BlockDocs from '@/components/BlockDocs';
 import BaseCard from '@/components/BaseCard';
-import BaseExample from '../components/BaseExample';
-import BasePriceBlock from '../components/BasePriceBlock';
+import BaseExample from '@/components/BaseExample';
+import BasePriceBlock from '@/components/BasePriceBlock';
 
 export default {
     components: {

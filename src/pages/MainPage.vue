@@ -94,7 +94,7 @@ import SectionMain from '@/layout/SectionMain';
 import TextWithBg from '@/components/TextWithBg';
 import TextSelection from '@/components/TextSelection';
 import BaseCard from '@/components/BaseCard';
-import BaseForm from '@/components/BaseForm.vue';
+import BaseForm from '@/components/BaseForm';
 
 export default {
     components: {

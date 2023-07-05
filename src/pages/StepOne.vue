@@ -119,8 +119,8 @@
 <script>
 import SectionHero from '@/layout/SectionHero';
 import SectionMain from '@/layout/SectionMain';
-import BaseExample from '../components/BaseExample';
-import BasePriceBlock from '../components/BasePriceBlock';
+import BaseExample from '@/components/BaseExample';
+import BasePriceBlock from '@/components/BasePriceBlock';
 import TextSelection from '@/components/TextSelection';
 import BaseCard from '@/components/BaseCard';
 
