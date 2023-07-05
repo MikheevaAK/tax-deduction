@@ -46,9 +46,9 @@ export default {
   methods: {
     scroll() {
       const el = document.getElementById('main');
-      const y = el.getBoundingClientRect().top + window.screenY - 50;
+      const y = el.getBoundingClientRect().top + window.screenY;
 
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      window.scrollBy({ top: y, behavior: 'smooth' });
     },
     scrollToMain() {
       this.scroll()
@@ -58,7 +58,80 @@ export default {
 </script>
 
 <style>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #5BADDE;
+}
+
+.hero .container {
+  padding: 7.986vw 10.486vw 0 8.403vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__wrap {
+  margin-bottom: 3.542vw;
+  gap: 5.556vw;
+  align-items: center;
+}
+
+.hero__descr {
+  color: #fff;
+  margin-bottom: 0.833vw;
+}
+
+.hero__left {
+  max-width: 42.222vw;
+  width: 100%;
+}
+
+.hero__right {
+  width: 33.333vw;
+  height: 33.333vw;
+  flex-shrink: 0;
+}
+
+.hero__link {
+  width: 4.444vw;
+  height: 4.444vw;
+  display: block;
+  text-align: center;
+}
+
 .hero__bg {
   background: linear-gradient(135deg, #5BADDE 0%, #358FC5 100%);
+}
+
+@media (max-width: 768px) {
+  .hero .container {
+    padding: 29.33vw 4.27vw 7.20vw 5.87vw;
+  }
+
+  .hero__wrap {
+    margin-bottom: 30.93vw;
+    gap: 13.33vw;
+    flex-direction: column-reverse;
+  }
+
+  .hero__descr {
+    margin-bottom: 1.60vw;
+  }
+
+  .hero__left {
+    max-width: unset;
+  }
+
+  .hero__right {
+    width: 74.67vw;
+    height: 74.67vw;
+  }
+
+  .hero__link {
+    width: 17.07vw;
+    height: 17.07vw;
+  }
 }
 </style>

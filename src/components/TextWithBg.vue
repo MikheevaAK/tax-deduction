@@ -1,5 +1,5 @@
 <template>
-    <div class="item text-black flex" :class="{'mb-025': margin}">
+    <div class="item text-black flex" :class="{ 'item-mb': margin }">
         <div class="number">{{ number }}.</div>
         <div class="descr">{{ text }}</div>
     </div>
@@ -12,27 +12,49 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .item {
-    max-width: 36.25rem;
+    max-width: 40.28vw;
     width: 100%;
-    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    padding: 0.56vw 1.67vw 0.56vw 0.56vw;
     align-items: flex-start;
-    gap: 0.62rem;
+    flex-wrap: nowrap;
+    gap: 0.69vw;
     border-radius: 8px;
     background-color: #F2FAFF;
 }
 
 .number {
     display: flex;
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 2.08vw;
+    height: 2.08vw;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 18px;
+    border-radius: 1.25vw;
     color: #fff;
     background-color: #5BADDE;
 }
 
+.item-mb {
+    margin-bottom: 0.28vw;
+}
+
+@media (max-width: 768px) {
+    .item {
+        max-width: unset;
+        padding: 2.13vw 6.40vw 2.13vw 2.13vw;
+        gap: 2.67vw;
+    }
+
+    .number {
+        width: 6.40vw;
+        height: 6.40vw;
+        border-radius: 4.80vw;
+    }
+
+    .item-mb {
+    margin-bottom: 1.07vw;
+}
+}
 </style>

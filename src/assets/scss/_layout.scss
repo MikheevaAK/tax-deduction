@@ -1,244 +1,349 @@
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: $text;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    background: rgba(255, 255, 255, 0.90);
-    backdrop-filter: blur(2px);
-    z-index: 10;
-
-    .container {
-        padding: 1rem 1.375rem 0.5rem 1.5rem;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__link {
-        margin-right: auto;
-    }
-
-    &__link_none {
-        @media (max-width: $screen-md) {
-            display: none;
-        }
-    }
-}
-
-.footer {
-    color: $text;
-    font-size: 1rem;
-    line-height: 1.5rem;
-
-    .container {
-        padding: 5rem 7.5rem 2.5rem 7.5rem;
-        justify-content: space-between;
-        align-items: center;
-
-        @media (max-width: $screen-md) {
-            padding-top: 2.5rem;
-        }
-    }
-}
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-color: $akcent;
-
-    .container {
-        padding: 7.986vw 10.486vw 0 8.403vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__wrap {
-        margin-bottom: 3.542vw;
-        gap: 5.556vw;
-        align-items: center;
-    }
-
-    &__descr {
-        color: $white;
-        margin-bottom: 0.833vw;
-    }
-
-    &__left {
-        max-width: 42.222vw;
-        width: 100%;
-    }
-
-    &__right {
-        width: 33.333vw;
-        height: 33.333vw;
-        flex-shrink: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    &__link {
-        width: 4.444vw;
-        height: 4.444vw;
-        display: block;
-        text-align: center;
-    }
-}
-
-.main {
-    padding-top: 5.63rem;
-    padding-bottom: 7.5rem;
-
-    .container {
-        // padding: 0 17.19rem;
-        padding: 0 19.097vw;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-    }
-}
-
 .card-list {
     margin-bottom: 15.25rem;
-    gap: 0.31rem;
     flex-wrap: wrap;
 }
 
-.card-min {
-    width: 8.25rem;
-    height: 7.625rem;
-    flex-shrink: 0;
-    background-color: #D9D9D9;
-}
+.card-list .card {
+    width: 9.17vw;
+    height: 9.17vw;
+    padding: 0.67vw 0 1.90vw 0.67vw;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 1.68vw;
+    border: 1px solid #fff;
 
-
-.attention-block {
-    position: relative;
-    width: 100%;
-    // padding: 5.25rem 1.88rem 1.94rem 1.88rem;
-    border-radius: 16px;
-    background-color: $fill-blue;
-
-    .wrap {
-        position: absolute;
-        top: -2.5rem;
-        left: calc(50% - 2rem);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .img {
-        margin-bottom: 0.5rem;
-        width: 4rem;
-        height: 4rem;
-    }
-
-    .t {
-        color: $akcent;
-        font-size: 1rem;
-        font-weight: $font-bold;
-        line-height: 1.5rem;
-        letter-spacing: 0.05rem;
-        text-transform: uppercase;
+    img {
+        width: 3.58vw;
+        height: 3.58vw;
     }
 }
 
-.main__wrap {
-    margin: 0 auto;
-    max-width: 36.25rem;
+.docs-wrap {
+    gap: 1.11vw;
+
+    @media (max-width: $screen-md) {
+        gap: 4.27vw;
+    }
 }
 
 .text-selection__columns {
-    gap: 1.56rem;
+    flex-wrap: nowrap;
+    gap: 1.79vw;
     justify-content: space-between;
 
     p {
-        width: calc(50% - 0.76rem);
+        width: 50%;
+    }
+
+    @media (max-width: $screen-md) {
+        font-size: 3.73vw;
+        line-height: 5.33vw;
     }
 }
 
-.form,
-.small-padding {
-    padding: 5.25rem 1.88rem 1.94rem 1.88rem;
-}
-
-.attention-block .only-text {
-    text-align: center;
-    padding: 6.13rem 6.31rem 2.63rem 6.31rem;
-}
-
-.main-page .attention-block .only-text {
-    padding: 6.13rem 4.94rem 4.87rem 4.94rem;
-}
-
 .medium-padding {
-    padding: 4.62rem 2.31rem 2.81rem 2.5rem;
+    padding: 5.29vw 2.71vw 3.21vw 2.71vw;
+
+    @media (max-width: $screen-md) {
+        padding: 15vw 2vw 5vw 5vw;
+    }
 }
 
 .example__top {
-    padding: 5.25rem 7.63rem 2.44rem 1.88rem;
+    padding: 5.83vw 8.33vw 2.43vw 2.08vw;
     border-bottom: 1px solid $akcent;
+
+    @media (max-width: $screen-md) {
+        padding: 17.07vw 4.7vw 5.33vw 4.7vw;
+    }
 }
 
 .example__bottom {
-    padding: 1.5rem 0.75rem 3.94rem 1.87rem;
+    padding: 1.67vw 0.83vw 3.61vw 2.08vw;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    column-gap: 1.11vw;
+    row-gap: 5vw;
+
+    @media (max-width: $screen-md) {
+        padding: 5.07vw 6.40vw 3.20vw 6.40vw;
+        justify-content: space-between;
+    }
 
     .price-block {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.56vw;
+
+        @media (max-width: $screen-md) {
+            flex-direction: column;
+            gap: 4.27vw;
+        }
     }
 }
 
 .total-amount {
-    padding: 0.44rem 1.12rem 0.25rem 0.5rem;
+    padding: 0.49vw 0 0.28vw 0.56vw;
     display: flex;
     flex-direction: column;
-    gap: 0.31rem;
+    gap: 0.35vw;
     border-radius: 8px;
     background-color: $background-blue;
 
-    &__number {
-        font-size: 4rem;
-        letter-spacing: -0.12rem;
-        line-height: 100%;
+    @media (max-width: $screen-md) {
+        padding: 1.87vw 3.47vw 0 2.13vw;
+        gap: 1.33vw;
     }
 
+    &__number {
+        font-size: 4.44vw;
+        letter-spacing: -0.13vw;
+        line-height: 100%;
+
+        @media (max-width: $screen-md) {
+            font-size: 7.47vw;
+            letter-spacing: unset;
+            line-height: 9.60vw;
+        }
+    }
 }
 
 .income-tax {
-    padding: 0.44rem 1.65rem 2rem 1.65rem;
+    width: 6.94vw;
+    height: 6.94vw;
+    padding: 0.49vw 0 2.22vw 0;
     justify-content: center;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    gap: 0.31rem;
+    gap: 0.35vw;
     border-radius: 8px;
     background-color: $background-blue;
 
-    &__number {
-        
+    @media (max-width: $screen-md) {
+        width: 26.67vw;
+        height: 26.67vw;
+        padding: 1.87vw 0 8.53vw 0;
+        gap: 1.33vw;
     }
 }
 
 .price {
-    // width: 7.5rem;
     align-self: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.28vw;
+
+    @media (max-width: $screen-md) {
+        gap: 1.07vw;
+    }
+
 
     &__rectangle {
         width: 100%;
-        height: 1.5625rem;
+        height: 1.74vw;
         background-color: $akcent;
+
+        @media (max-width: $screen-md) {
+            height: 6.67vw;
+        }
+    }
+}
+
+.form__section {
+    padding: 2.22vw 2.08vw 3.68vw 2.08vw;
+    border-bottom: 1px solid $akcent;
+
+    @media (max-width: $screen-md) {
+        padding: 8.53vw 4.27vw 8.53vw 4.27vw;
+    }
+
+    &:first-child {
+        padding-top: 5.83vw;
+
+        @media (max-width: $screen-md) {
+            padding-top: 17.07vw;
+        }
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &-descr {
+        max-width: 48.82vw;
+        width: 100%;
+
+        @media (max-width: $screen-md) {
+            max-width: unset;
+        }
+    }
+
+    &-descr {
+        margin-top: 0.56vw;
+
+        @media (max-width: $screen-md) {
+            margin-top: 2.13vw;
+        }
+    }
+
+    &-input {
+        margin-top: 1.67vw;
+        margin-bottom: 0.56vw;
+        padding: 2.22vw 1.11vw 0.28vw 0.56vw;
+        width: 16.39vw;
+        border-radius: 8px;
+        background-color: $background-blue;
+        color: $akcent;
+        font-size: 4.44vw;
+        letter-spacing: -0.13vw;
+
+        &::placeholder {
+            opacity: 0.20000000298023224;
+            color: #5BADDE;
+        }
+
+        @media (max-width: $screen-md) {
+            margin-top: 6.40vw;
+            margin-bottom: 2.13vw;
+            padding: 8.53vw 4.27vw 1.07vw 2.13vw;
+            width: 70.67vw;
+            font-size: 17.07vw;
+            letter-spacing: -0.51vw;
+        }
+    }
+}
+
+.form__input-wrap {
+    display: flex;
+    gap: 1.11vw;
+
+    @media (max-width: $screen-md) {
+        flex-wrap: wrap;
+        gap: 4.27vw;
+    }
+}
+
+.form__card-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.14vw;
+
+    @media (max-width: $screen-md) {
+        gap: 4.27vw;
+    }
+}
+
+.form__card-wrap .card {
+    width: 12.50vw;
+    height: 12.50vw;
+    padding: 0.83vw 1.04vw 3.47vw 0.83vw;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    gap: 2.08vw;
+    border-radius: 8px;
+    background-color: $akcent;
+    color: $white;
+
+    @media (max-width: $screen-md) {
+        width: 43.5vw;
+        height: 43.5vw;
+        padding: 3.2vw 0 2.67vw 3.20vw;
+        gap: 8vw;
+    }
+}
+
+.form__card-wrap .card img {
+    width: 4.44vw;
+    height: 4.44vw;
+
+    @media (max-width: $screen-md) {
+        width: 17.07vw;
+        height: 17.07vw;
+    }
+}
+
+.price-block__wrap {
+    position: relative;
+}
+
+.price-all {
+    position: absolute;
+    bottom: -2.36vw;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28vw;
+
+    @media (max-width: 768px) {
+        bottom: 0;
+        left: unset;
+        right: -17px;
+        height: 100%;
+        width: 2.67vw;
+    }
+}
+
+.price-all__solid {
+    width: 100%;
+    height: 0.69vw;
+    border-bottom: 2px solid $akcent;
+    border-left: 2px solid $akcent;
+    border-right: 2px solid $akcent;
+
+    @media (max-width: 768px) {
+        height: 100%;
+        border-left: none;
+        border-top: 2px solid $akcent;
+    }
+}
+
+.price-all__number {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .attention-block.m-0 {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
+}
+
+.tool {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.42vw;
+    right: -0.42vw;
+    border-radius: 0.56vw;
+    background-color: $fill-blue;
+    z-index: -1;
+
+    @media (max-width: 768px) {
+        border-radius: 2.13vw;
+    }
+}
+
+.tool svg {
+    width: 1.11vw;
+    height: 1.11vw;
+
+    @media (max-width: 768px) {
+        width: 4.27vw;
+        height: 4.27vw;
     }
 }
