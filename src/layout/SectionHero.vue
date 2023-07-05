@@ -66,7 +66,7 @@ export default {
 }
 
 .hero .container {
-  padding: 7.986vw 10.486vw 0 8.403vw;
+  padding: 10.370vh 10.486vw 0 8.403vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,12 +107,12 @@ export default {
 
 @media (max-width: 768px) {
   .hero .container {
-    padding: 29.33vw 4.27vw 7.20vw 5.87vw;
+    padding: 1vh 4.27vw 7.20vw 5.87vw;
   }
 
   .hero__wrap {
-    margin-bottom: 30.93vw;
-    gap: 13.33vw;
+    margin-bottom: 3vh;
+    gap: 4vh;
     flex-direction: column-reverse;
   }
 
@@ -121,6 +121,7 @@ export default {
   }
 
   .hero__left {
+      height: 50.13vw;
     max-width: unset;
   }
 

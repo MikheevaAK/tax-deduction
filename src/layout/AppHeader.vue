@@ -39,6 +39,7 @@ export default {}
 
 @media (max-width: 768px) {
   .header {
+    position: static;
     font-size: 3.73vw;
     line-height: 5.33vw;
   }
