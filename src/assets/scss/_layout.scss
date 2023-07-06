@@ -1,21 +1,45 @@
 .card-list {
-    margin-bottom: 15.25rem;
+    padding: 0 4.5vw;
+    margin-bottom: 6.94vw;
     flex-wrap: wrap;
+    gap: 0.28vw;
+
+    @media (max-width: $screen-md) {
+        gap:0.27vw;
+        padding: 0;
+        margin-bottom: 16vw;
+    }
 }
 
 .card-list .card {
-    width: 9.17vw;
-    height: 9.17vw;
-    padding: 0.67vw 0 1.90vw 0.67vw;
+    width: 12.99vw;
+    height: 12.99vw;
+    padding: 1.11vw 1.11vw 1.18vw 0.69vw;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     border: none;
-    gap: 1.68vw;
-    border: 1px solid #fff;
+    gap: 0.97vw;
+    border-radius: 8px;
+    background-color: #63B8EB;
+
+    @media (max-width: $screen-md) {
+        border-radius: unset;
+        width: 49.8vw;
+        height: 49.8vw;
+        gap: 3.73vw;
+        padding: 4.27vw 4.27vw 4.53vw 2.67vw;
+    }
+
 
     img {
-        width: 3.58vw;
-        height: 3.58vw;
+        width: 5.56vw;
+        height: 5.56vw;
+
+        @media (max-width: $screen-md) {
+            width: 21.33vw;
+            height: 21.33vw;
+        }
     }
 }
 
@@ -198,10 +222,6 @@
         font-size: 4.44vw;
         letter-spacing: -0.13vw;
 
-        &::placeholder {
-            opacity: 0.20000000298023224;
-            color: #5BADDE;
-        }
 
         @media (max-width: $screen-md) {
             margin-top: 6.40vw;
@@ -213,6 +233,11 @@
         }
     }
 }
+
+.form__input_placeholder {
+    color: rgba(91,173,222, 0.20000000298023224);
+}
+
 
 .form__input-wrap {
     display: flex;

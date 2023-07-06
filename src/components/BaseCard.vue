@@ -40,8 +40,8 @@ export default {
             default: false
         },
         step: {
-            type: String,
-            default: ''
+            type: Number,
+            default: 0
         }
     }
 }

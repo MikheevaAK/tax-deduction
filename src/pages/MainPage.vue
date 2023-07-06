@@ -13,32 +13,30 @@
                 <TextWithBg :number="2" :text="'Удобнее искать нужную информацию'" class="mb-25" />
 
                 <p class="mb-40">
-                    Вы можете начать изучение последовательно или с любой карточки. Рекомендуем сначала пройти небольшой
-                    тест,
-                    чтобы
-                    узнать: какие виды вычетов вам доступны и сколько денег вам вернут.
+                    Вы можете начать изучение последовательно или с любой карточки. <b>Рекомендуем сначала пройти небольшой
+                    тест, чтобы узнать: какие виды вычетов вам доступны и сколько денег вам вернут.</b>
                 </p>
             </div>
 
-            <!-- <div class="flex card-list">
+            <div class="flex card-list">
                 <BaseCard :link="'stepOne'" :text="'Сколько денег можно вернуть в виде налогового вычета?'"
-                    :classTitle="'caption'" :img="'img/link-2.png'" />
-                <BaseCard :link="'stepTwoOne'" :text="'Вычет за обучение'" :classTitle="'caption'"
+                    :classTitle="'graph-text'" :img="'img/link-2.png'" />
+                <BaseCard :link="'stepTwoOne'" :text="'Вычет за обучение'" :classTitle="'graph-text'"
                     :img="'img/link-3.png'" />
-                <BaseCard :link="'stepTwoTwo'" :text="'Вычет за обучение детей'" :classTitle="'caption'"
+                <BaseCard :link="'stepTwoTwo'" :text="'Вычет за обучение детей'" :classTitle="'graph-text'"
                     :img="'img/link-4.png'" />
-                <BaseCard :link="'stepTwoThree'" :text="'Вычет за лечение'" :classTitle="'caption'"
+                <BaseCard :link="'stepTwoThree'" :text="'Вычет за лечение'" :classTitle="'graph-text'"
                     :img="'img/link-5.png'" />
-                <BaseCard :link="'stepTwoFour'" :text="'Спортивный вычет'" :classTitle="'caption'"
+                <BaseCard :link="'stepTwoFour'" :text="'Спортивный вычет'" :classTitle="'graph-text'"
                     :img="'img/link-6.png'" />
                 <BaseCard :link="'stepThree'" :text="'Документы готовы. Что дальше?'"
-                    :classTitle="'caption'" :img="'img/link-7.png'" />
+                    :classTitle="'graph-text'" :img="'img/link-7.png'" />
                 <BaseCard :link="'stepFourOne'"
-                    :text="'Схема получения налогового вычета через работодателя'" :classTitle="'caption'"
+                    :text="'Схема получения налогового вычета через работодателя'" :classTitle="'graph-text'"
                     :img="'img/link-8.png'" />
                 <BaseCard :link="'stepFourTwo'" :text="'Схема получения налогового вычета через налоговую'"
-                    :classTitle="'caption'" :img="'img/link-9.png'" />
-            </div> -->
+                    :classTitle="'graph-text'" :img="'img/link-9.png'" />
+            </div>
 
             <div class="main__wrap">
                 <h3 class="h3">

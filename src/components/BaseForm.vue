@@ -4,7 +4,7 @@
             <p class="lead form__section-title">
                 Вы получали официальную зарплату в 2022 году?
             </p>
-            <input v-model="salary" class="form__section-input" type="text" placeholder="0₽">
+            <money v-model="salary" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : salary <= 0}"></money>
             <p class="graph-text">Если да, напишите ежемесячный размер; если нет, оставьте поле пустым</p>
         </div>
         <div class="form__section">
@@ -15,7 +15,7 @@
                 Например, анализы, лечение зубов, любые лекарства, прописанные врачом. Можно учесть расходы за
                 себя, супруга, своих родителей и детей до 18 лет (до 24, если они учатся очно).
             </p>
-            <input v-model="medication" class="form__section-input" type="text" placeholder="0₽">
+            <money v-model="medication" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : medication <= 0}"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -26,7 +26,7 @@
                 Например, на языковых курсах, в автошколе или ВУЗе. Можно учесть расходы за себя, сестер и
                 братьев до 24 лет, если они учатся очно.
             </p>
-            <input v-model="studies" class="form__section-input" type="text" placeholder="0₽">
+            <money v-model="studies" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : studies <= 0}"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -37,7 +37,7 @@
                 Например, абонемент в фитнес-клуб, персональные тренировки, детские спортивные секции. Можно
                 учесть расходы за себя или своих детей до 24 лет, если они учатся очно.
             </p>
-            <input v-model="sport" class="form__section-input" type="text" placeholder="0₽">
+            <money v-model="sport" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : sport <= 0}"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -51,15 +51,15 @@
 
             <div class="form__input-wrap">
                 <div>
-                    <input v-model="childOne" class="form__section-input" type="text" placeholder="0₽">
+                    <money v-model="childOne" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childOne <= 0}"></money>
                     <p class="graph-text">Расходы за год на 1-го ребенка</p>
                 </div>
                 <div>
-                    <input v-model="childTwo" class="form__section-input" type="text" placeholder="0₽">
+                    <money v-model="childTwo" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childTwo <= 0}"></money>
                     <p class="graph-text">Расходы за год на 2-го ребенка</p>
                 </div>
                 <div>
-                    <input v-model="childThree" class="form__section-input" type="text" placeholder="0₽">
+                    <money v-model="childThree" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childThree <= 0}"></money>
                     <p class="graph-text">Расходы за год на 3-го ребенка</p>
                 </div>
             </div>
@@ -121,10 +121,12 @@
 
 <script>
 import BaseCard from './BaseCard.vue';
+import {Money} from 'v-money'
 
 export default {
     components: {
         BaseCard,
+        Money
     },
     data() {
         return {
@@ -135,6 +137,14 @@ export default {
             childOne: '',
             childTwo: '',
             childThree: '',
+            money: {
+                decimal: '',
+                thousands: '',
+                prefix: '',
+                suffix: '₽',
+                precision: 0,
+                masked: false
+            },
         }
     },
     methods: {
@@ -145,16 +155,7 @@ export default {
             } else {
                 return child * 0.13
             }
-        },
-        onAccept(e) {
-            const maskRef = e.detail;
-            this.value = maskRef.value;
-            console.log('accept', maskRef.value);
-        },
-        onComplete(e) {
-            const maskRef = e.detail;
-            console.log('complete', maskRef.unmaskedValue);
-        },
+        }
     },
     computed: {
         tax() {
@@ -169,7 +170,7 @@ export default {
                 returnTax = sumSpending * 0.13
             }
             if (this.tax < returnTax) {
-                return this.tax + ''
+                return this.tax
             } else {
                 return Math.floor(returnTax * 10) / 10
             }
