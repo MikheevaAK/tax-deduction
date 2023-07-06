@@ -106,13 +106,17 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: unset;
+  }
+
   .hero .container {
-    padding: 1vh 4.27vw 7.20vw 5.87vw;
+    padding: 3vh 4.27vw 7.20vw 5.87vw;
   }
 
   .hero__wrap {
     margin-bottom: 3vh;
-    gap: 4vh;
+    gap: 2vh;
     flex-direction: column-reverse;
   }
 

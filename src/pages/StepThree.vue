@@ -27,7 +27,7 @@
                     Для начала вам потребуется электронная подпись, вне зависимости от дальнейшего способа получения вычета
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-1.png'" :imgMobile="'img/screen-1-2.png 768w, img/screen-1.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1.png'" :imgMobile="'img/screen-1-2.png 768w, img/screen-1.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 1
@@ -44,7 +44,7 @@
                     3. С помощью ЭП (но у нас ее пока нет).
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 2
@@ -54,7 +54,7 @@
                     и в выпадающем меню выбираете строку «Настройки профиля»
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 3
@@ -63,7 +63,7 @@
                     В вертикальном меню левее основного поля выбираете строку Электронная подпись
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 4
@@ -78,7 +78,7 @@
                     Придумываете пароль и вбиваете его в нижнее поле ввода, после чего отправляете заявку.
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 5
@@ -88,7 +88,7 @@
                     сообщение.
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 1000w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 6

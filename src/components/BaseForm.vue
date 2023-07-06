@@ -26,7 +26,7 @@
                 Например, на языковых курсах, в автошколе или ВУЗе. Можно учесть расходы за себя, сестер и
                 братьев до 24 лет, если они учатся очно.
             </p>
-            <input  v-model="studies" class="form__section-input" type="text" placeholder="0₽">
+            <input v-model="studies" class="form__section-input" type="text" placeholder="0₽">
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -51,29 +51,24 @@
 
             <div class="form__input-wrap">
                 <div>
-                    <input v-model="sport" class="form__section-input" type="text" placeholder="0₽">
+                    <input v-model="childOne" class="form__section-input" type="text" placeholder="0₽">
                     <p class="graph-text">Расходы за год на 1-го ребенка</p>
                 </div>
                 <div>
-                    <input v-model="childTwo"
-                           class="form__section-input"
-                           type="text" placeholder="0₽">
+                    <input v-model="childTwo" class="form__section-input" type="text" placeholder="0₽">
                     <p class="graph-text">Расходы за год на 2-го ребенка</p>
                 </div>
                 <div>
-                    <input v-model="childThree"
-                           class="form__section-input"
-                           type="text"
-                           placeholder="0₽">
+                    <input v-model="childThree" class="form__section-input" type="text" placeholder="0₽">
                     <p class="graph-text">Расходы за год на 3-го ребенка</p>
                 </div>
             </div>
         </div>
         <div v-if="medication != 0 || studies != 0 || sport != 0 || childOne != 0 || childTwo != 0 || childThree != 0"
-             class="form__section form__section-last">
+            class="form__section form__section-last">
 
             <div class="form-total form-total__desctop">
-                <div class="form-total__item">
+                <div v-if="totalYourSum > 0" class="form-total__item">
                     <div class="graph-text">
                         Ваш вычет
                     </div>
@@ -81,19 +76,17 @@
                         {{ totalYourSum }}₽
                     </div>
                 </div>
-                <div v-if="childOne != 0 || childTwo != 0 || childThree != 0" class="form-total__wrap">
-                    <div class="form-total__item">
-                        <div class="form-total__item-number plus h1">
-                            +
-                        </div>
+                <div v-if="totalChildSum > 0 && totalYourSum > 0" class="form-total__item">
+                    <div class="form-total__item-number plus h1">
+                        +
                     </div>
-                    <div class="form-total__item">
-                        <div class="graph-text">
-                            Вычет за обучение детей
-                        </div>
-                        <div class="form-total__item-number h1">
-                            {{ totalChildSum }}₽
-                        </div>
+                </div>
+                <div v-if="totalChildSum > 0" class="form-total__item">
+                    <div class="graph-text">
+                        Вычет за обучение детей
+                    </div>
+                    <div class="form-total__item-number h1">
+                        {{ totalChildSum }}₽
                     </div>
                 </div>
                 <div v-if="totalAll > 0" class="form-total__item">
@@ -114,15 +107,13 @@
             </p>
             <div class="form__card-wrap">
                 <BaseCard v-if="studies != 0" :link="'stepTwoOne'" :text="'Вычет за обучение'" :classTitle="'caption'"
-                          :img="'img/link-3.png'"/>
+                    :img="'img/link-3.png'" />
                 <BaseCard v-if="childOne != 0 || childTwo != 0 || childThree != 0" :link="'stepTwoTwo'"
-                          :text="'Вычет за обучение детей'" :classTitle="'caption'"
-                          :img="'img/link-4.png'"/>
-                <BaseCard v-if="medication != 0" :link="'stepTwoThree'" :text="'Вычет за лечение'"
-                          :classTitle="'caption'"
-                          :img="'img/link-5.png'"/>
+                    :text="'Вычет за обучение детей'" :classTitle="'caption'" :img="'img/link-4.png'" />
+                <BaseCard v-if="medication != 0" :link="'stepTwoThree'" :text="'Вычет за лечение'" :classTitle="'caption'"
+                    :img="'img/link-5.png'" />
                 <BaseCard v-if="sport != 0" :link="'stepTwoFour'" :text="'Спортивный вычет'" :classTitle="'caption'"
-                          :img="'img/link-6.png'"/>
+                    :img="'img/link-6.png'" />
             </div>
         </div>
     </form>
@@ -146,13 +137,31 @@ export default {
             childThree: '',
         }
     },
+    methods: {
+        totalOneChild(child) {
+            if (child > 50000) {
+                return 50000 * 0.13
+
+            } else {
+                return child * 0.13
+            }
+        },
+        onAccept(e) {
+            const maskRef = e.detail;
+            this.value = maskRef.value;
+            console.log('accept', maskRef.value);
+        },
+        onComplete(e) {
+            const maskRef = e.detail;
+            console.log('complete', maskRef.unmaskedValue);
+        },
+    },
     computed: {
         tax() {
             return this.salary * 12 * 0.13
         },
         totalYourSum() {
             let sumSpending = this.medication + this.studies + this.sport
-            // console.log(sumSpending)
             let returnTax
             if (sumSpending > 120000) {
                 returnTax = 120000 * 0.13
@@ -162,36 +171,29 @@ export default {
             if (this.tax < returnTax) {
                 return this.tax + ''
             } else {
-                return returnTax
+                return Math.floor(returnTax * 10) / 10
             }
         },
         totalChildSum() {
-            let sumSpending = this.childOne + this.childTwo + this.childThree
-            // console.log(sumSpending)
+            let sumSpending = this.totalOneChild(this.childOne) + this.totalOneChild(this.childTwo) + this.totalOneChild(this.childThree)
             let remainder = this.tax - this.totalYourSum
-            let returnTax
             if (remainder > 0) {
-                if (sumSpending > 50000) {
-                    returnTax = 50000 * 0.13
-                } else {
-                    returnTax = sumSpending * 0.13
-                }
-                return returnTax
+                return Math.floor(sumSpending * 10) / 10
             } else {
                 return 0
             }
         },
         totalAll() {
-            return Number(this.totalYourSum + this.totalChildSum)
+            let sum = Number(this.totalYourSum + this.totalChildSum)
+            return Math.floor(sum * 10) / 10
         }
     }
 
 }
 </script>
 
-<style>
-.form-total,
-.form-total__wrap {
+<style scoped>
+.form-total {
     display: flex;
     align-items: center;
     gap: 1.46vw;

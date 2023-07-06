@@ -68,7 +68,7 @@
             :classTitle="'h2'" :img="'img/link-1.png'" />
 
         <div class="nav__wrap">
-            <BaseCard :link="'stepOne'" :size="'small'" :text="'Сколько денег можно вернуть в виде налогового вычета?'"
+            <BaseCard class="hide" :link="'stepOne'" :size="'small'" :text="'Сколько денег можно вернуть в виде налогового вычета?'"
                 :classTitle="'caption'" :img="'img/link-2.png'" />
             <BaseCard :link="'stepTwoOne'" :size="'small'" :text="'Вычет за обучение'" :classTitle="'caption'"
                 :img="'img/link-3.png'" />
@@ -78,11 +78,11 @@
                 :img="'img/link-5.png'" />
             <BaseCard :link="'stepTwoFour'" :size="'small'" :text="'Спортивный вычет'" :classTitle="'caption'"
                 :img="'img/link-6.png'" />
-            <BaseCard :link="'stepThree'" :size="'small'" :text="'Документы готовы. Что дальше?'" :classTitle="'caption'"
+            <BaseCard class="hide" :link="'stepThree'" :size="'small'" :text="'Документы готовы. Что дальше?'" :classTitle="'caption'"
                 :img="'img/link-7.png'" />
-            <BaseCard :link="'stepFourOne'" :size="'small'" :text="'Схема получения налогового вычета через работодателя'"
+            <BaseCard class="hide" :link="'stepFourOne'" :size="'small'" :text="'Схема получения налогового вычета через работодателя'"
                 :classTitle="'caption'" :img="'img/link-8.png'" />
-            <BaseCard :link="'stepFourTwo'" :size="'small'" :text="'Схема получения налогового вычета через налоговую'"
+            <BaseCard class="hide" :link="'stepFourTwo'" :size="'small'" :text="'Схема получения налогового вычета через налоговую'"
                 :classTitle="'caption'" :img="'img/link-9.png'" />
         </div>
     </main>
@@ -112,6 +112,16 @@ export default {
 @media (min-width: 768px) {
     .attention-block .only-text {
         padding: 6.81vw 5.42vw 5.42vw 5.42vw;
+    }
+}
+
+.hide {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hide {
+        display: none;
     }
 }
 </style>

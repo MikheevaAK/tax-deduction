@@ -37,7 +37,7 @@
                     Как через сайт ФНС оформить справку на право получения налогового вычета
                 </p>
             </div>
-                <BlockScreen :img="'img/screen-1.png'" :imgMobile="'img/screen-1-2.png 768w, img/screen-1.png 1000w'" />
+                <BlockScreen :img="'img/screen-1.png'" :imgMobile="'img/screen-1-2.png 768w, img/screen-1.png 900w'" />
             
 
         </SectionMain>

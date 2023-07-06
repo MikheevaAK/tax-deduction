@@ -9,8 +9,10 @@ html::-webkit-scrollbar {
 }
 
 html {
-    -ms-overflow-style: none;  /* IE и Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE и Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 *,
@@ -282,14 +284,17 @@ p {
     content: '';
     position: absolute;
     z-index: -1;
-    left: -0.81rem;
-    right: -0.81rem;
+    top: 0.07vw;
+    left: -0.69vw;
+    right: -0.69vw;
     height: 1.74vw;
-    transform: skew(-15deg);
+    transform: skew(-20deg);
     background: $akcent;
 
     @media (max-width: $screen-md) {
         height: 5.87vw;
+        left: -2.67vw;
+        right: -2.67vw;
     }
 }
 
