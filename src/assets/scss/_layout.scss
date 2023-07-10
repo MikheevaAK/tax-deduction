@@ -340,14 +340,15 @@
     }
 }
 
-.tool {
+.tooltip {
     position: relative;
     display: inline-flex;
     align-items: center;
     z-index: 1;
+    cursor: pointer;
 }
 
-.tool::before {
+.tooltip::before {
     content: '';
     position: absolute;
     top: 0;
@@ -363,7 +364,29 @@
     }
 }
 
-.tool svg {
+.tooltip .tooltip__content {
+    position: absolute;
+    z-index: 1;
+    top: 1em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    visibility: hidden;
+    width: 480px;
+    padding: 16px 24px 24px 24px;
+    color: $text;
+
+    border-radius: 8px;
+    border: 1px solid var(--akcent, #5BADDE);
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(2px);
+}
+
+.tooltip:hover .tooltip__content {
+    visibility: visible;
+}
+
+
+.tooltip svg {
     width: 1.11vw;
     height: 1.11vw;
 
