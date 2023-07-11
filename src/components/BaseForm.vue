@@ -4,7 +4,9 @@
             <p class="lead form__section-title">
                 Вы получали официальную зарплату в 2022 году?
             </p>
-            <money v-model="salary" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : salary <= 0}"></money>
+            <money v-model="salary" v-bind="money" type="text" placeholder="0₽"
+                :class="{ 'form__input_placeholder': salary <= 0 }" class="form__section-input" @input="resizeInput('1')"
+                :style="{ width: this.width1 }" maxlength="9"></money>
             <p class="graph-text">Если да, напишите ежемесячный размер; если нет, оставьте поле пустым</p>
         </div>
         <div class="form__section">
@@ -15,7 +17,9 @@
                 Например, анализы, лечение зубов, любые лекарства, прописанные врачом. Можно учесть расходы за
                 себя, супруга, своих родителей и детей до 18 лет (до 24, если они учатся очно).
             </p>
-            <money v-model="medication" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : medication <= 0}"></money>
+            <money v-model="medication" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                :class="{ 'form__input_placeholder': medication <= 0 }" @input="resizeInput('2')"
+                :style="{ width: this.width2 }" maxlength="9"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -26,7 +30,9 @@
                 Например, на языковых курсах, в автошколе или ВУЗе. Можно учесть расходы за себя, сестер и
                 братьев до 24 лет, если они учатся очно.
             </p>
-            <money v-model="studies" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : studies <= 0}"></money>
+            <money v-model="studies" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                :class="{ 'form__input_placeholder': studies <= 0 }" @input="resizeInput('3')"
+                :style="{ width: this.width3 }" maxlength="9"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -37,7 +43,9 @@
                 Например, абонемент в фитнес-клуб, персональные тренировки, детские спортивные секции. Можно
                 учесть расходы за себя или своих детей до 24 лет, если они учатся очно.
             </p>
-            <money v-model="sport" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : sport <= 0}"></money>
+            <money v-model="sport" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                :class="{ 'form__input_placeholder': sport <= 0 }" @input="resizeInput('4')" :style="{ width: this.width4 }"
+                maxlength="9"></money>
             <p class="graph-text">Напишите примерную сумму за год</p>
         </div>
         <div class="form__section">
@@ -51,15 +59,21 @@
 
             <div class="form__input-wrap">
                 <div>
-                    <money v-model="childOne" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childOne <= 0}"></money>
+                    <money v-model="childOne" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                        :class="{ 'form__input_placeholder': childOne <= 0 }" @input="resizeInput('5')"
+                        :style="{ width: this.width5 }" maxlength="9"></money>
                     <p class="graph-text">Расходы за год на 1-го ребенка</p>
                 </div>
                 <div>
-                    <money v-model="childTwo" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childTwo <= 0}"></money>
+                    <money v-model="childTwo" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                        :class="{ 'form__input_placeholder': childTwo <= 0 }" @input="resizeInput('6')"
+                        :style="{ width: this.width6 }" maxlength="9"></money>
                     <p class="graph-text">Расходы за год на 2-го ребенка</p>
                 </div>
                 <div>
-                    <money v-model="childThree" v-bind="money" class="form__section-input" type="text" placeholder="0₽" :class="{'form__input_placeholder' : childThree <= 0}"></money>
+                    <money v-model="childThree" v-bind="money" class="form__section-input" type="text" placeholder="0₽"
+                        :class="{ 'form__input_placeholder': childThree <= 0 }" @input="resizeInput()"
+                        :style="{ width: this.width7 }" maxlength="9"></money>
                     <p class="graph-text">Расходы за год на 3-го ребенка</p>
                 </div>
             </div>
@@ -121,7 +135,7 @@
 
 <script>
 import BaseCard from './BaseCard.vue';
-import {Money} from 'v-money'
+import { Money } from 'v-money'
 
 export default {
     components: {
@@ -145,6 +159,13 @@ export default {
                 precision: 0,
                 masked: false
             },
+            width1: 0,
+            width2: 0,
+            width3: 0,
+            width4: 0,
+            width5: 0,
+            width6: 0,
+            width7: 0,
         }
     },
     methods: {
@@ -155,7 +176,25 @@ export default {
             } else {
                 return child * 0.13
             }
-        }
+        },
+        resizeInput(count) {
+            switch (count) {
+                case '1':
+                    return this.width1 = (event.target.value.length) + "ch";
+                case '2':
+                    return this.width2 = (event.target.value.length) + "ch";
+                case '3':
+                    return this.width3 = (event.target.value.length) + "ch";
+                case '4':
+                    return this.width4 = (event.target.value.length) + "ch";
+                case '5':
+                    return this.width5 = (event.target.value.length) + "ch";
+                case '6':
+                    return this.width6 = (event.target.value.length) + "ch";
+                default:
+                    return this.width7 = (event.target.value.length) + "ch";
+            }
+        },
     },
     computed: {
         tax() {
