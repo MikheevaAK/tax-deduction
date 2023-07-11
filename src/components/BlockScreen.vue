@@ -42,10 +42,12 @@ export default {
         },
         openModal() {
             this.visible = true
+            document.querySelector('html').style.overflow = 'hidden'
             document.querySelector('body').style.overflow = 'hidden'
         },
         closeModal() {
             this.visible = false
+            document.querySelector('html').style.overflow = 'visible'
             document.querySelector('body').style.overflow = 'visible'
         }
     }

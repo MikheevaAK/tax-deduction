@@ -155,7 +155,7 @@ export default {
 
 .docs-wrap {
     flex-wrap: wrap;
-    gap: 2.78vw;
+    gap: 2vw;
 }
 
 @media (max-width: 768px) {

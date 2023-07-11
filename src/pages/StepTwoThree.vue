@@ -212,7 +212,7 @@ export default {
 }
 
 .kit-docs .kit-docs__item:first-child {
-    width: 24.65vw;
+    width: 25.7vw;
     flex-shrink: 0;
 }
 
