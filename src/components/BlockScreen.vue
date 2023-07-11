@@ -2,9 +2,9 @@
     <div class="screen">
         <div v-if="!isMobile">
             <div class="screen__link graph-text mb-16">https://lkfl2.nalog.ru/lkfl/</div>
-        <div class="screen__img">
-            <img :src="img" alt="">
-        </div>
+            <div class="screen__img">
+                <img :src="img" alt="">
+            </div>
         </div>
         <div v-else>
             <a @click.prevent="openModal" href="#" class="screen__link-cursor">
@@ -42,13 +42,17 @@ export default {
         },
         openModal() {
             this.visible = true
-            document.querySelector('body').style.position = 'fixed'
-            document.querySelector('body').style.overflow = 'hidden'
+            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('html').style.overflow = 'hidden';
+
+            document.querySelector('html').style['scroll-behavior'] = 'unset';
         },
         closeModal() {
             this.visible = false
-            document.querySelector('body').style.position = 'static'
-            document.querySelector('body').style.overflow = 'visible'
+            document.querySelector('body').style.overflow = '';
+            document.querySelector('html').style.overflow = '';
+
+            document.querySelector('html').style['scroll-behavior'] = ''
         }
     }
 }
