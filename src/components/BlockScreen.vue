@@ -1,8 +1,23 @@
 <template>
     <div class="screen">
-        <div class="screen__link graph-text mb-16">https://lkfl2.nalog.ru/lkfl/</div>
+        <div v-if="!isMobile">
+            <div class="screen__link graph-text mb-16">https://lkfl2.nalog.ru/lkfl/</div>
         <div class="screen__img">
             <img :src="img" alt="">
+        </div>
+        </div>
+        <div v-else>
+            <a @click.prevent="openModal" href="#" class="screen__link-cursor">
+                <div class="screen__link graph-text mb-16">https://lkfl2.nalog.ru/lkfl/</div>
+                <div class="screen__img">
+                    <img :src="img" alt="">
+                </div>
+            </a>
+            <div v-show="visible" class="screen__modal" @click.self="closeModal">
+                <div class="screen__modal-content">
+                    <img :src="img" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -13,6 +28,25 @@ export default {
         img: {
             type: String,
             default: ''
+        }
+    },
+    data() {
+        return {
+            isMobile: (window.innerWidth < 760),
+            visible: false
+        }
+    },
+    methods: {
+        onResize() {
+            this.isMobile = (window.innerWidth < 760);
+        },
+        openModal() {
+            this.visible = true
+            document.querySelector('body').style.overflow = 'hidden'
+        },
+        closeModal() {
+            this.visible = false
+            document.querySelector('body').style.overflow = 'visible'
         }
     }
 }
@@ -35,12 +69,37 @@ export default {
     height: 1.94vw;
 }
 
+.screen__link-cursor {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
 .screen__img {
     width: 100%;
     height: 31.25vw;
     border-radius: 9px;
     border: 1px solid rgba(91, 173, 222, 0.20);
     overflow: hidden;
+}
+
+.screen__modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.screen__modal-content {
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -60,7 +119,8 @@ export default {
     }
 
     .screen__img {
-        height: max-content;;
+        height: max-content;
+        ;
         border-radius: unset;
         border: none;
     }
