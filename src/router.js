@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// import MainPage from '@/pages/MainPage'
 import MainPage from '@/pages/MainPage'
 import StepOne from '@/pages/StepOne'
 import StepTwoOne from '@/pages/StepTwoOne'
@@ -20,11 +19,6 @@ const routes = [
         component: MainPage,
         path: '/'
     },
-    // {
-    //     name: 'stepZero',
-    //     component: StepZero,
-    //     path: '/step/0'
-    // },
     {
         name: 'stepOne',
         component: StepOne,

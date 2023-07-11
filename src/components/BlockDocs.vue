@@ -186,6 +186,7 @@ export default {
 <style>
 .doc__wrap {
     display: flex;
+    width: 12.5vw;
     gap: 1.11vw;
     flex-direction: column;
 }
