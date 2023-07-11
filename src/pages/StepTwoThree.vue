@@ -40,24 +40,29 @@
                 </p>
             </div>
 
-            <p class="h4 mb-20 mb">
-                Чтобы подать на налоговый вычет за медицинские услуги
-            </p>
-
             <div class="kit-docs flex mb-80">
                 <div class="kit-docs__item flex">
-                    <p class="graph-text">Для текущего периода</p>
+                    <p class="h4 mb-20">
+                        Чтобы подать на налоговый вычет за медицинские услуги
+                    </p>
                     <BlockDocs :type="'inquiry'"
-                        :text="'Справки об оплате медицинских услуг — ее выдают в справочной или бухгалтерии клиники. При оформлении вам нужно будет назвать свой ИНН.'" />
+                        :text="'Справки об оплате медицинских услуг — ее можно получить сразу после приема у врача. При оформлении вам нужно будет назвать свой ИНН.'" />
                 </div>
-                <div class="plus lead">+</div>
                 <div class="kit-docs__item flex">
-                    <p class="graph-text">Для получения справки за предыдущие периоды, возьмите с собой:</p>
+                    <p class="h4 mb-20">Для получения справки за предыдущие приемы, возьмите с собой</p>
                     <div class="docs-wrap flex mb-80">
                         <BlockDocs :type="'passport'" :text="'Паспорт'" />
                         <BlockDocs :type="'doc'"
                             :text="'Договор между вами и клиникой (если потеряли свой, то копия хранится в бухгалтерии клиники)'" />
-                        <BlockDocs :type="'receipt'" :text="'Документы об оплате — чеки и квитанции'" />
+                        <BlockDocs :type="'receipt'" :tooltip="true">
+                            <BaseTooltip :word="'Документы об оплате —'">
+                                <p>
+                                    Если документы для подтверждения оплаты не сохранились — можно обратиться в банк и
+                                    запросить электронные копии
+                                </p>
+                            </BaseTooltip>
+                            &nbsp;чеки и квитанции
+                        </BlockDocs>
                     </div>
                 </div>
             </div>
@@ -68,7 +73,7 @@
                         Чтобы получить вычет за покупку лекарств
                     </p>
                     <div class="docs-wrap flex">
-                        <BlockDocs :type="'inquiry'"
+                        <BlockDocs :type="'recipe'"
                             :text="'Рецептурный бланк, оформленный врачом, или лист назначения, заверенный подписью доктора'" />
                         <BlockDocs :type="'receipt'" :text="'Документы об оплате — чеки и квитанции'" />
                     </div>
@@ -79,7 +84,7 @@
                     </p>
                     <div class="docs-wrap flex">
                         <BlockDocs :type="'doc-dms'"
-                            :text="'Договор ДМС (все стра-ницы) или страхового медицинского полиса добровольного страхования'" />
+                            :text="'Договор ДМС (все страницы) или страхового медицинского полиса добровольного страхования'" />
                         <BlockDocs :type="'receipt'" :text="'Документы об оплате — чеки и квитанции'" />
                     </div>
                 </div>
@@ -91,7 +96,7 @@
                         Если вы получаете налоговый вычет за лечение членов вашей семьи или покупку для них лекарств
                     </p>
                     <div class="docs-wrap flex">
-                        <BlockDocs :type="'birth'"
+                        <BlockDocs :type="'marriage'"
                             :text="'Подтверждающие родство, опеку, попечительство, заключение брака (например, свидетельство о рождении или свидетельство о браке).'" />
                     </div>
                 </div>
@@ -203,8 +208,12 @@ export default {
 
 <style scoped>
 .kit-docs {
-    gap: 2.50vw;
+    gap: 6.32vw;
     align-items: center;
+}
+
+.kit-docs .kit-docs__item:first-child {
+    width: 24.65vw;
 }
 
 .kit-docs__item {
@@ -227,6 +236,10 @@ export default {
 .kit-docs-third .kit-docs-third__item {
     max-width: 27.08vw;
     width: 100%;
+}
+
+.kit-docs-third .kit-docs-third__item:first-child {
+    max-width: 24vw;
 }
 
 @media (max-width: 768px) {

@@ -142,8 +142,25 @@
                 </g>
             </svg>
         </div>
-
-        <div class="doc__text">{{ text }}</div>
+        <div v-else-if="type == 'recipe'" class="doc__img">
+            <svg width="180" height="255" viewBox="0 0 180 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="179" height="254" rx="7.5" fill="#FAFDFF" />
+                <rect x="132" y="206" width="32" height="32" rx="16" fill="#5BADDE" />
+                <path
+                    d="M18.548 26.08V30H17.008V20.2H21.558C23.602 20.2 24.708 21.558 24.708 23.14C24.708 24.666 23.588 26.08 21.558 26.08H18.548ZM18.548 24.61H21.418C22.412 24.61 23.098 24.036 23.098 23.14C23.098 22.244 22.412 21.67 21.418 21.67H18.548V24.61ZM27.7322 20.2H34.8722V21.67H29.2722V24.19H34.4522V25.66H29.2722V28.53H35.0122V30H27.7322V20.2ZM45.1846 31.54V30H38.1146V20.2H39.6546V28.6H43.8546V20.2H45.3946V28.6H46.5846V31.54H45.1846ZM49.331 20.2H56.471V21.67H50.871V24.19H56.051V25.66H50.871V28.53H56.611V30H49.331V20.2ZM66.5735 21.6H61.2535V30H59.7135V20.2H68.1135V30H66.5735V21.6ZM79.5954 20.2V21.67H76.0254V30H74.4854V21.67H70.9154V20.2H79.5954Z"
+                    fill="#5BADDE" />
+                <rect x="16" y="44" width="100" height="8" rx="2" fill="#5BADDE" />
+                <rect x="16" y="60" width="70" height="8" rx="2" fill="#5BADDE" />
+                <rect x="90" y="60" width="46" height="8" rx="2" fill="#5BADDE" />
+                <rect x="16" y="76" width="46" height="8" rx="2" fill="#5BADDE" />
+                <rect x="66" y="76" width="60" height="8" rx="2" fill="#5BADDE" />
+                <rect x="0.5" y="0.5" width="179" height="254" rx="7.5" stroke="#5BADDE" />
+            </svg>
+        </div>
+        <div v-if="tooltip" class="doc__text">
+            <slot></slot>
+        </div>
+        <div v-else class="doc__text">{{ text }}</div>
     </div>
 </template>
 
@@ -157,6 +174,10 @@ export default {
         text: {
             type: String,
             default: ''
+        },
+        tooltip: {
+            type: Boolean,
+            default: false
         }
     }
 }
@@ -175,7 +196,7 @@ export default {
 }
 
 .doc__text {
-    width: 12.50vw;
+    width: 13.5vw;
     font-size: 1.11vw;
     line-height: 1.67vw;
 }
