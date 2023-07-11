@@ -217,5 +217,9 @@ export default {
         font-size: 4.27vw;
         line-height: 6.40vw;
     }
+
+    .width-max .doc__text {
+        width: 145%;
+    }
 }
 </style>

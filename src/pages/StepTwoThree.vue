@@ -45,7 +45,7 @@
                     <p class="h4 mb-20">
                         Чтобы подать на налоговый вычет за медицинские услуги
                     </p>
-                    <BlockDocs :type="'inquiry'"
+                    <BlockDocs :type="'inquiry'" class=" width-max"
                         :text="'Справки об оплате медицинских услуг — ее можно получить сразу после приема у врача. При оформлении вам нужно будет назвать свой ИНН.'" />
                 </div>
                 <div class="kit-docs__item flex">
@@ -54,7 +54,7 @@
                         <BlockDocs :type="'passport'" :text="'Паспорт'" />
                         <BlockDocs :type="'doc'"
                             :text="'Договор между вами и клиникой (если потеряли свой, то копия хранится в бухгалтерии клиники)'" />
-                        <BlockDocs :type="'receipt'" :tooltip="true">
+                        <BlockDocs :type="'receipt'" :tooltip="true" class=" width-max">
                             <BaseTooltip :word="'Документы об оплате —'">
                                 <p>
                                     Если документы для подтверждения оплаты не сохранились — можно обратиться в банк и
@@ -96,7 +96,7 @@
                         Если вы получаете налоговый вычет за лечение членов вашей семьи или покупку для них лекарств
                     </p>
                     <div class="docs-wrap flex">
-                        <BlockDocs :type="'marriage'"
+                        <BlockDocs :type="'marriage'" class="width-max"
                             :text="'Подтверждающие родство, опеку, попечительство, заключение брака (например, свидетельство о рождении или свидетельство о браке).'" />
                     </div>
                 </div>
@@ -209,11 +209,11 @@ export default {
 <style scoped>
 .kit-docs {
     gap: 6.32vw;
-    align-items: center;
 }
 
 .kit-docs .kit-docs__item:first-child {
     width: 24.65vw;
+    flex-shrink: 0;
 }
 
 .kit-docs__item {
@@ -230,7 +230,7 @@ export default {
 }
 
 .kit-docs-third {
-    gap: 6.81vw;
+    gap: 8.81vw;
 }
 
 .kit-docs-third .kit-docs-third__item {
@@ -265,17 +265,13 @@ export default {
         width: 47%;
     }
 
-    .kit-docs-third .kit-docs-third__item {
+    .kit-docs .kit-docs__item:first-child {
+        width: 100%;
+    }
+
+    .kit-docs-third .kit-docs-third__item,
+    .kit-docs-third .kit-docs-third__item:first-child  {
         max-width: unset;
-    }
-
-    .plus {
-        height: unset;
-    }
-
-    .mb {
-        margin-left: 4.27vw;
-        margin-right: 4.27vw;
     }
 }
 </style>

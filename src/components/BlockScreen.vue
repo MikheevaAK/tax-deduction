@@ -95,6 +95,7 @@ export default {
     bottom: 0;
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden
 }
 
 .screen__modal-content {
