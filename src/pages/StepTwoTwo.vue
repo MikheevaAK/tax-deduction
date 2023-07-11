@@ -74,7 +74,7 @@
             </div>
 
             <TextSelection :title="'Пример'" class="m-0">
-                <BaseExample :totalTitle="'Вычет'" :totalNumber="'11 700'" :totalSpending="'120 000 ₽'">
+                <BaseExample :totalTitle="'Вычет'" :totalNumber="'11 700'" :totalSpending="'90 000 ₽'">
                     <div slot="descr">
                         Допустим, в 2022 году вы потратили 40 000 рублей на обучение программированию одного ребенка и 60
                         000 — на курсы английского языка для второго ребенка. Поскольку максимальная сумма налогового вычета

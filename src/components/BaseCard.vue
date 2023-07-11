@@ -1,14 +1,12 @@
 <template>
-    <router-link :to="{ name: link }" v-slot="{ href }">
-        <a :href="href" :class="{ 'link-disabled': active }">
-            <div class="card" :class="[size, { 'active': active }]">
-                <img :src="img" alt="">
-                <div class="text-wrap">
-                    <div v-if="step" class="text-white hide">Шаг {{ step }}</div>
-                    <div class="text-white" :class="classTitle">{{ text }}</div>
-                </div>
+    <router-link :to="{ name: link }">
+        <div class="card" :class="[size, { 'active': active }]">
+            <img :src="img" alt="">
+            <div class="text-wrap">
+                <div v-if="step" class="text-white hide">Шаг {{ step }}</div>
+                <div class="text-white" :class="classTitle">{{ text }}</div>
             </div>
-        </a>
+        </div>
     </router-link>
 </template>
 

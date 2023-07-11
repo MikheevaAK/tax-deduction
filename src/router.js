@@ -63,8 +63,16 @@ const routes = [
 
 const router = new VueRouter({
     routes,
-    scrollBehavior() {
-        return { x: 0, y: 0 }
+    scrollBehavior(to, from, savedPosition) {
+        let position = {x: 0, y: 0}
+        if (savedPosition) {
+            position = savedPosition
+        }
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(position)
+            }, 300)
+        })
     }
 })
 
