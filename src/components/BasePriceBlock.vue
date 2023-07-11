@@ -61,6 +61,10 @@ export default {
     width: 8.33vw;
 }
 
+.more.width-60 {
+    width: 12.33vw;
+}
+
 .width-50 {
     width: 8.33vw;
 }
@@ -86,7 +90,8 @@ export default {
         width: 45vw;
     }
 
-    .width-60 {
+    .width-60,
+    .more.width-60 {
         width: 48vw;
     }
 

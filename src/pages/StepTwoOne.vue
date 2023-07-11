@@ -28,14 +28,32 @@
             <TextSelection :img="'img/pointing.png'" :title="'Важно'" :shadow="true" class="mb-5">
                 <p class="lead text-black only-text">
                     Образовательное учреждение может быть как государственным, так и частным, но крайне важно, чтобы у него
-                    была лицензия, дающая право оказывать образовательные услуги. Отправлять ее скан в ФНС не надо, но если
+                    была&nbsp;
+                    <BaseTooltip :word="'лицензия,'" :border="true">
+                        <p>
+                            В большинстве случаев информацию о лицензии можно найти в нижней части сайта в виде ссылки. Если
+                            ее нет на сайте, обратитесь в компанию, она пришлёт выписку из электронного реестра или
+                            реквизиты лицензии: дату выдачи и номер.
+                        </p>
+                    </BaseTooltip>
+                    &nbsp;дающая право оказывать образовательные услуги. Отправлять ее скан в ФНС не надо, но если
                     у учреждения нет лицензии, то и налоговый вычет не предоставят.
                 </p>
             </TextSelection>
 
             <div class="main__wrap">
                 <p class="mb-30">
-                    Чтобы подать на налоговый вычет за образование, вам потребуются сканы или фотографии:
+                    Чтобы подать на налоговый вычет за образование, вам потребуются
+                    &nbsp;
+                    <BaseTooltip :word="'сканы'">
+                        <p>
+                            Для всех документов подойдут как сканы бумажных вариантов, так и электронные копии. Если
+                            что-то потерялось — можно обратиться в образовательное учреждение или в банк (для подтверждения
+                            оплаты) и попросить восстановить необходимые документы.
+                        </p>
+                    </BaseTooltip>
+                    &nbsp;
+                    или фотографии:
                 </p>
 
                 <div class="docs-wrap flex mb-80">
@@ -108,6 +126,7 @@ import BlockDocs from '@/components/BlockDocs';
 import BaseCard from '@/components/BaseCard';
 import BaseExample from '@/components/BaseExample';
 import BasePriceBlock from '@/components/BasePriceBlock';
+import BaseTooltip from '@/components/BaseTooltip';
 
 export default {
     components: {
@@ -118,7 +137,8 @@ export default {
         BlockDocs,
         BaseExample,
         BasePriceBlock,
-        BaseCard
+        BaseCard,
+        BaseTooltip
     }
 }
 </script>

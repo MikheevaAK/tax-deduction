@@ -17,7 +17,7 @@
             </div>
 
             <TextSelection :img="'img/example.png'" :title="'Примеры расчетов'" class="m-0">
-                <BaseExample :totalTitle="'Вычет'" :totalNumber="'13000'" :totalSpending="'120 000 ₽'">
+                <BaseExample :totalTitle="'Вычет'" :totalNumber="'13000'" :totalSpending="'100 000 ₽'">
                     <div slot="descr">
                         Допустим, в 2022 году вы потратили 40 000 рублей на лечение, 40 000 — на языковые курсы, а еще
                         20 000 — на абонемент в бассейн. Итого суммарный объем ваших трат составил:&nbsp;&nbsp;
@@ -77,8 +77,13 @@
                     оформить вычет сразу за каждый год из этих трех лет (и вернуть 46 800 рублей).
                     <br />
                     <br />
-                    Если хотите получить максимальный объем налоговых вычетов, необходимо, чтобы ваш официальный доход за
-                    каждый год был не меньше, чем 120 000 рублей.
+                    Если хотите получить максимальный объем налоговых вычетов, необходимо, чтобы ваш официальный доход&nbsp;
+                    <BaseTooltip :word="'за каждый год'">
+                        <p>
+                            Например, для вычета за 2020 год нужно показать доходы за 2021 год. Вариант с крупным доходом за один год не пройдет.
+                        </p>
+                    </BaseTooltip>
+                    &nbsp;был не меньше, чем 120 000 рублей.
                 </p>
             </div>
 
@@ -87,6 +92,20 @@
                     С 1 января 2024 года максимальную сумму вычета повысят до 150 000 рублей. Соответственно, вырастет
                     и сумма к возврату за расходы в 2024 году: 150 000 &#215; 13% = 19 500 рублей.
                 </p>
+            </TextSelection>
+
+            <div class="main__wrap">
+                <h3 class="h3">
+                    Калькулятор социальных вычетов
+                </h3>
+                <p class="">
+                    Пройдите тест, чтобы узнать какие виды социальных вычетов вам доступны и сколько денег вам может вернуть
+                    государство
+                </p>
+            </div>
+
+            <TextSelection :img="'img/abstract.png'" :title="'Тест'" class="m-0">
+                <BaseForm />
             </TextSelection>
 
             <div class="main__wrap">
@@ -123,6 +142,8 @@ import BaseExample from '@/components/BaseExample';
 import BasePriceBlock from '@/components/BasePriceBlock';
 import TextSelection from '@/components/TextSelection';
 import BaseCard from '@/components/BaseCard';
+import BaseForm from '@/components/BaseForm';
+import BaseTooltip from '@/components/BaseTooltip';
 
 
 export default {
@@ -132,7 +153,9 @@ export default {
         BaseExample,
         BasePriceBlock,
         TextSelection,
-        BaseCard
+        BaseCard,
+        BaseForm,
+        BaseTooltip
     }
 }
 </script>

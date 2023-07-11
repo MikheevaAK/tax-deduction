@@ -9,7 +9,15 @@
                 </p>
                 <TextWithBg :number="1" :text="'Оплачивали медицинские услуги'" :margin="true" />
                 <TextWithBg :number="2" :text="'Покупали лекарства'" :margin="true" />
-                <TextWithBg :number="3" :text="'Покупали добровольную медицинскую страховку'" class="mb-40" />
+                <TextWithBg :number="3" :tooltip="true" class="mb-40">
+                    Покупали добровольную медицинскую&nbsp;
+                    <BaseTooltip :word="'страховку'" :border="true">
+                        <p>
+                            Полис ДМС должны купить именно вы, а не ваш работодатель. Если вы оплатили половину, то такой
+                            вариант не подойдет
+                        </p>
+                    </BaseTooltip>
+                </TextWithBg>
 
                 <p class="mb-25">
                     Под медицинскими услугами понимается фактически весь спектр взаимоотношений «врач — пациент». Посетили
@@ -28,7 +36,7 @@
                 <TextWithBg :number="4" :text="'Родителей'" class="mb-40" />
                 <p class="mb-50">
                     А вот получить налоговый вычет за оплаченное лечение брата/сестры, тестя/тещи или свекра/свекрови
-                    н удастся. В зависимости от вида лечения, требуется разный список документов.
+                    не удастся. В зависимости от вида лечения, требуется разный список документов.
                 </p>
             </div>
 
@@ -175,6 +183,7 @@ import TextSelection from '@/components/TextSelection';
 import TextWithBg from '@/components/TextWithBg';
 import BaseCard from '@/components/BaseCard';
 import BlockDocs from '@/components/BlockDocs';
+import BaseTooltip from '@/components/BaseTooltip';
 
 
 export default {
@@ -186,7 +195,8 @@ export default {
         TextSelection,
         BaseCard,
         TextWithBg,
-        BlockDocs
+        BlockDocs,
+        BaseTooltip
     }
 }
 </script>

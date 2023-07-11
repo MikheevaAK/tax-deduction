@@ -42,11 +42,18 @@
                     Налоговый вычет за учебу ребенка может получить любой из родителей. Но сделать это дважды — чтобы
                     по 6 500 рублей получили и вы, и ваш супруг/супруга, — разумеется, не получится.
                 </p>
+                <p class="mb-25">
+                    Чтобы подать на налоговый вычет за образование ребенка, вам потребуются&nbsp;
+                    <BaseTooltip :word="'сканы'">
+                        <p>
+                            Для всех документов подойдут как сканы бумажных вариантов, так и электронные копии. Если
+                            что-то потерялось — можно обратиться в образовательное учреждение или в банк (для подтверждения
+                            оплаты) и попросить восстановить необходимые документы.
+                        </p>
+                    </BaseTooltip>
+                    &nbsp;или фотографии:
+                </p>
             </div>
-
-            <p class="h4 mb-25 max-width">
-                Чтобы подать на налоговый вычет за образование ребенка, вам потребуются сканы или фотографии:
-            </p>
 
             <div class="docs-wrap flex mb-80">
                 <BlockDocs :type="'doc'"
@@ -75,8 +82,8 @@
                         х 13% = 11 700 рублей.
                     </div>
                     <div slot="price-block" class="price-block">
-                        <BasePriceBlock :title="'Code'" :number="'40 000'" :width="'width: 10rem;'" />
-                        <BasePriceBlock :title="'Английский'" :number="'60 000'" :width="'width: 15rem;'" />
+                        <BasePriceBlock :title="'Программинг'" :number="'40 000'" />
+                        <BasePriceBlock :title="'Английский'" :number="'60 000'" class="more" />
                     </div>
 
                 </BaseExample>
@@ -123,6 +130,7 @@ import TextSelection from '@/components/TextSelection';
 import TextWithBg from '@/components/TextWithBg';
 import BaseCard from '@/components/BaseCard';
 import BlockDocs from '@/components/BlockDocs';
+import BaseTooltip from '@/components/BaseTooltip';
 
 
 export default {
@@ -134,7 +142,8 @@ export default {
         TextSelection,
         TextWithBg,
         BlockDocs,
-        BaseCard
+        BaseCard,
+        BaseTooltip
     }
 }
 </script>

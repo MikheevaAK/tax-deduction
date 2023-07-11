@@ -2,7 +2,7 @@
     <div class="screen">
         <div class="screen__link graph-text mb-16">https://lkfl2.nalog.ru/lkfl/</div>
         <div class="screen__img">
-            <img :src="img" :srcset="imgMobile" sizes="(max-width: 768px) 768px, 900px" alt="">
+            <img :src="img" alt="">
         </div>
     </div>
 </template>
@@ -11,10 +11,6 @@
 export default {
     props: {
         img: {
-            type: String,
-            default: ''
-        },
-        imgMobile: {
             type: String,
             default: ''
         }
@@ -52,7 +48,7 @@ export default {
         width: unset;
         margin-left: 4.27vw;
         margin-right: 4.27vw;
-        height: 86.40vw;
+        height: max-content;
         border-radius: 20px;
         padding: 2.67vw 0 6.13vw 0;
     }
@@ -64,13 +60,13 @@ export default {
     }
 
     .screen__img {
-        height: 66.13vw;
+        height: max-content;;
         border-radius: unset;
         border: none;
     }
 
     .screen__img img {
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 </style>

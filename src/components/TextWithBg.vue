@@ -1,14 +1,34 @@
 <template>
     <div class="item text-black flex" :class="{ 'item-mb': margin }">
         <div class="number">{{ number }}.</div>
-        <div class="descr">{{ text }}</div>
+        <div v-if="tooltip" class="descr">
+            <slot></slot>
+        </div>
+        <div v-else class="descr">{{ text }}</div>
     </div>
 </template>
 
 <script>
 
 export default {
-    props: ['number', 'text', 'margin']
+    props: {
+        number: {
+            type: Number,
+            default: 0
+        },
+        text: {
+            type: String,
+            default: ''
+        },
+        margin: {
+            type: Boolean,
+            default: false
+        },
+        tooltip: {
+            type: Boolean,
+            default: false
+        },
+    }
 }
 </script>
 
@@ -54,7 +74,7 @@ export default {
     }
 
     .item-mb {
-    margin-bottom: 1.07vw;
-}
+        margin-bottom: 1.07vw;
+    }
 }
 </style>

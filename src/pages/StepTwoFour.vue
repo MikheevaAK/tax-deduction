@@ -28,15 +28,23 @@
 
             <div class="main__wrap">
                 <p class="mb-25">
-                    Для получения вычета за фитнес вам потребуются сканы или фотографии:
+                    Для получения вычета за фитнес вам потребуются&nbsp;
+                    <BaseTooltip :word="'сканы'">
+                        <p>
+                            Для всех документов подойдут как сканы бумажных вариантов, так и электронные копии. Если
+                            что-то потерялось — можно обратиться в образовательное учреждение или в банк (для подтверждения
+                            оплаты) и попросить восстановить необходимые документы.
+                        </p>
+                    </BaseTooltip>
+                    &nbsp;или фотографии:
                 </p>
                 <div class="docs-wrap flex mb-80">
                     <BlockDocs :type="'doc'"
-                        :text="'Договора между вами и образовательным учреждением на очное обучение (все страницы)'" />
+                        :text="'Договор на оказание физкультурно-оздоровительных услуг (все страницы)'" />
                     <BlockDocs :type="'receipt'" :text="'Документы об оплате — чеки и квитанции'" />
                 </div>
                 <p class="mb-25">
-                    Если в спортивный зал ходите не вы, а ваш ребенок, потребуется подтвердить родство с помощью скана или фотографии:
+                    Если в спортивный зал ходите не вы, а ваш ребенок, потребуется подтвердить родство с помощью скана:
                 </p>
                 <div class="docs-wrap flex mb-80">
                     <BlockDocs :type="'birth'"
@@ -50,10 +58,8 @@
             <TextSelection :title="'Пример'" class="m-0">
                 <BaseExample :totalTitle="'Вычет'" :totalNumber="'11 700'" :totalSpending="'90 000 ₽'">
                     <div slot="descr">
-                        Допустим, в 2022 году вы потратили 40 000 рублей на обучение программированию одного ребенка и 60
-                        000 — на курсы английского языка для второго ребенка. Поскольку максимальная сумма налогового вычета
-                        за обучение каждого из детей составляет 50 000 рублей, сумма к возврату будет такой: 40 000 + 50 000
-                        х 13% = 11 700 рублей.
+                        Допустим, в 2022 году вы потратили 50 000 рублей на абонемент в фитнес-центр и 40 000 рублей
+                        на спортивные секции ребенка. Итого суммарный объем ваших трат: 50 000 + 40 000 = 90 000 рублей.
                     </div>
                     <div slot="price-block" class="price-block">
                         <BasePriceBlock :title="'Абонемент'" :number="'50 000'" />
@@ -71,19 +77,19 @@
             </div>
         </SectionMain>
         <div class="nav flex">
-                <div class="nav__wrap">
-                    <BaseCard :link="'stepTwoOne'" :size="'small'" :text="'Вычет за обучение'" :classTitle="'caption'"
-                        :img="'img/link-3.png'" />
-                    <BaseCard :link="'stepTwoTwo'" :size="'small'" :text="'Вычет за обучение детей'" :classTitle="'caption'"
-                        :img="'img/link-4.png'" />
-                    <BaseCard :link="'stepTwoThree'" :size="'small'" :text="'Вычет за лечение'" :classTitle="'caption'"
-                        :img="'img/link-5.png'" />
-                    <BaseCard :link="'stepTwoFour'" :size="'small'" :text="'Спортивный вычет'" :classTitle="'caption'"
-                        :img="'img/link-6.png'" :active="true" />
-                </div>
-                <BaseCard :link="'stepThree'" :size="'medium'" :text="'Документы готовы. Что дальше?'" :classTitle="'h2'"
-                    :img="'img/link-7.png'" :step="3" />
+            <div class="nav__wrap">
+                <BaseCard :link="'stepTwoOne'" :size="'small'" :text="'Вычет за обучение'" :classTitle="'caption'"
+                    :img="'img/link-3.png'" />
+                <BaseCard :link="'stepTwoTwo'" :size="'small'" :text="'Вычет за обучение детей'" :classTitle="'caption'"
+                    :img="'img/link-4.png'" />
+                <BaseCard :link="'stepTwoThree'" :size="'small'" :text="'Вычет за лечение'" :classTitle="'caption'"
+                    :img="'img/link-5.png'" />
+                <BaseCard :link="'stepTwoFour'" :size="'small'" :text="'Спортивный вычет'" :classTitle="'caption'"
+                    :img="'img/link-6.png'" :active="true" />
             </div>
+            <BaseCard :link="'stepThree'" :size="'medium'" :text="'Документы готовы. Что дальше?'" :classTitle="'h2'"
+                :img="'img/link-7.png'" :step="3" />
+        </div>
     </main>
 </template>
 
@@ -96,6 +102,7 @@ import TextSelection from '@/components/TextSelection';
 import TextWithBg from '@/components/TextWithBg';
 import BaseCard from '@/components/BaseCard';
 import BlockDocs from '@/components/BlockDocs';
+import BaseTooltip from '@/components/BaseTooltip';
 
 
 export default {
@@ -104,7 +111,7 @@ export default {
         SectionMain,
         BaseExample,
         BasePriceBlock,
-        
+        BaseTooltip,
         TextSelection,
         TextWithBg,
         BaseCard,

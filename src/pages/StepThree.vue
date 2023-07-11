@@ -18,7 +18,8 @@
                     :text="'Через налоговую инспекцию (можно получить налоговый вычет за три последних года. В 2023 году за период с 2020 по 2022 года)'"
                     class="mb-25" />
                 <p class="mb-80">
-                    Разберем каждый из них.
+                    Разберем каждый из них. В следующих разделах мы разберём схему оформления по каждому из них. Но для
+                    начала вам потребуется оформить электронную подпись.
                 </p>
                 <p class="h3 text-headers mb-16">
                     Как сделать Электронную подпись через сайт ФНС
@@ -27,7 +28,7 @@
                     Для начала вам потребуется электронная подпись, вне зависимости от дальнейшего способа получения вычета
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-1.png'" :imgMobile="'img/screen-1-2.png 768w, img/screen-1.png 900w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1.png'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 1
@@ -44,7 +45,7 @@
                     3. С помощью ЭП (но у нас ее пока нет).
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1-2.png'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 2
@@ -54,7 +55,7 @@
                     и в выпадающем меню выбираете строку «Настройки профиля»
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1-3.png'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 3
@@ -63,7 +64,7 @@
                     В вертикальном меню левее основного поля выбираете строку Электронная подпись
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1-4.png'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 4
@@ -78,24 +79,17 @@
                     Придумываете пароль и вбиваете его в нижнее поле ввода, после чего отправляете заявку.
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
+            <BlockScreen :img="'img/screen-1-5.png'" class="mb-16" />
             <div class="main__wrap">
                 <p class="h4 text-black">
                     Шаг 5
                 </p>
-                <p class="mb-50">
+                <p class="mb-80">
                     Оформление ЭП занимает от получаса до суток. Пока идет процесс ее регистрации, вы будете видеть такое
-                    сообщение.
+                    сообщение. Когда ЭП будет готова, система вам об этом сообщит
                 </p>
             </div>
-            <BlockScreen :img="'img/screen-2.png'" :imgMobile="'img/screen-2-2.png 768w, img/screen-2.png 900w'" class="mb-16" />
             <div class="main__wrap">
-                <p class="h4 text-black">
-                    Шаг 6
-                </p>
-                <p class="mb-80">
-                    Когда ЭП будет готова, система вам об этом сообщит
-                </p>
                 <p class="lead">
                     Итак, ЭП у вас готова, теперь можно переходить к заполнению заявки.
                 </p>
