@@ -56,7 +56,7 @@ export default {
 .attention-block .title {
     color: #5BADDE;
     font-size: 1.11vw;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.67vw;
     letter-spacing: 0.06vw;
     text-transform: uppercase;

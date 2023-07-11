@@ -410,7 +410,7 @@
         backdrop-filter: blur(2px);
         font-size: 1.39vw;
         line-height: 2.08vw;
-        font-weight: 400;
+        font-weight: $font-light;
 
         @media (max-width: $screen-md) {
             width: 100%;
