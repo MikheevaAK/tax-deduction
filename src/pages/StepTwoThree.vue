@@ -208,7 +208,7 @@ export default {
 
 <style scoped>
 .kit-docs {
-    gap: 6.32vw;
+    gap: 5.3vw;
 }
 
 .kit-docs .kit-docs__item:first-child {
@@ -221,16 +221,12 @@ export default {
     gap: 0.69vw;
 }
 
-.plus {
-    height: 16.67vw;
-}
-
 .kit-docs-second {
     gap: 4.79vw;
 }
 
 .kit-docs-third {
-    gap: 8.81vw;
+    gap: 6.8vw;
 }
 
 .kit-docs-third .kit-docs-third__item {
