@@ -20,9 +20,8 @@
 
             <TextSelection :img="'img/pointing.png'" :title="'Важно'" :shadow="true">
                 <p class="lead text-black only-text">
-                    Физкультурно-оздоровительная организация, которую вы посещаете, должна входить в реестр Министерства
-                    спорта
-                    России. Список обновляется ежегодно. Если ее в этом списке нет, вычет получить не удастся.
+                    Физкультурно-оздоровительная организация, которую вы посещаете, должна входить <a target="_blank" href="http://www.minsport.gov.ru/activities/o-nalogovom-vychete-za-zanyatiya-sportom/" class="text-decoration">в реестр</a> Министерства
+                    спорта России. Список обновляется ежегодно. Если ее в этом списке нет, вычет получить не удастся.
                 </p>
             </TextSelection>
 
